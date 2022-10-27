@@ -50,20 +50,33 @@ public class BookManager {
     }
 
     public Book[] changeBook(Book[] books) {
-        System.out.println("Список книг: ");
-        for (int i = 0; i < books.length; i++) {
-            System.out.print(i + 1 + ". " + books[i].getBookName() + ". ");
-            for (int j = 0; j < books[i].getAuthors().length; j++) {
-                System.out.printf("%s %s %d",
-                        books[i].getAuthors()[j].getFirstname(),
-                        books[i].getAuthors()[j].getLastname(),
-                        books[i].getAuthors()[j].getBirthday());
-            }
-            System.out.println();
-        }
-        return null;
+      System.out.println("Список книг: ");
+      printListBooks(books);
+      System.out.print("Выберите номер книг ; ");
+      int bookNumber=scanner.nextInt(); scanner.nextLine();
+      System.out.println("Название; "+books[bookNumber-1].getBookName());
+      System.out.println("Хотите изменить название книги (y/n)?");
+      String tru= scanner.nextLine();
+      if (tru.equals("y")){
+          System.out.print("Введите новое имя: ");
+          books[bookNumber-1].setBookName(scanner.nextLine());
+      }
+      System.out.println("Год публикации; "+books[bookNumber-1].getPublishedYear());
+      System.out.println("Хотите изменить год публикации (y/n)?");
+      String tru1= scanner.nextLine();
+      if (tru1.equals("y")){
+          System.out.print("Введите новой год: ");
+          books[bookNumber-1]. setPublishedYear(scanner.nextInt()); scanner.nextLine();
+      }
+      System.out.println("Количество книг; "+books[bookNumber-1].getQuantity());
+      System.out.println("Хотите изменить количество книг (y/n)?");
+      String tru2= scanner.nextLine();
+      if (tru2.equals("y")){
+          System.out.print("Введите количество книг: ");
+          books[bookNumber-1].setQuantity(scanner.nextInt()); scanner.nextLine();
+      }
+        return books;
     }
-
     public Book createBook(String bookName, int quantity, int publishedYear) {
         Book book = new Book();
         book.setBookName(bookName);
