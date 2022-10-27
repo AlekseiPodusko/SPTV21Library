@@ -7,7 +7,6 @@ public class Reader {
     private String firstname;
     private String lastname;
     private String phone;
-
     public Reader() {
     }
 
@@ -31,6 +30,7 @@ public class Reader {
         return phone;
     }
 
+    
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -41,7 +41,9 @@ public class Reader {
                 + "firstname=" + firstname 
                 + ", lastname=" + lastname 
                 + ", phone=" + phone 
-                + '}';
+                +'}';
     }
+
+   
     
 }
