@@ -10,7 +10,7 @@ public class History {
     private Reader reader;
     private Date takeOnBook;
     private Date returnBook;
-
+    
     public History() {
     }
 
@@ -48,12 +48,13 @@ public class History {
 
     @Override
     public String toString() {
-        return "History{" 
-                + "book=" + book 
-                + ", reader=" + reader 
-                + ", takeOnBook=" + takeOnBook 
-                +", returnBook=" + returnBook 
-                + '}';
+        return "History{" + 
+                "book=" + book + 
+                ", reader=" + reader + 
+                ", takeOnBook=" + takeOnBook + 
+                ", returnBook=" + returnBook + '}';
+    }
+
+
     }
     
-}
