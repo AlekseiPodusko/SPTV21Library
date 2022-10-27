@@ -43,6 +43,7 @@ public class App {
             System.out.println("6. Список книг");
             System.out.println("7. Список читателей");
             System.out.println("8. Редактировать книгу");
+            System.out.println("9. Редактировать читателя");
             System.out.print("Выберите задачу: ");
             int task = scanner.nextInt();
             scanner.nextLine();
@@ -77,10 +78,15 @@ public class App {
                     break;
                 case 7:
                     System.out.println("7. Список читателей");
-                    readerManager.printListReader(readers);
+                    readerManager.printListReaders(readers);
                     break;
                 case 8:
+                    System.out.println("8. Изменить книгу");
                     this.books = bookManager.changeBook(books);
+                    break;
+                case 9:
+                    System.out.println("8. Изменить читателя");
+                    this.readers = readerManager.changeReader(readers);
                     break;
                 default:
                     System.out.println("Выберите задачу из списка!");;
